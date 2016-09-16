@@ -1,0 +1,54 @@
+{
+  "name": "dojo-cli-build-webpack",
+  "version": "2.0.0-pre",
+  "description": "dojo webpack build command",
+  "private": true,
+  "homepage": "http://dojotoolkit.org",
+  "bugs": {
+    "url": "https://github.com/dojo/examples/issues"
+  },
+  "license": "BSD-3-Clause",
+  "main": "main.js",
+  "files": [
+    "dist",
+    "src",
+    "typings.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dojo/cli-build.git"
+  },
+  "scripts": {
+    "prepublish": "grunt peerDepInstall",
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "codecov.io": "0.1.6",
+    "dojo-loader": ">=2.0.0-beta",
+    "dts-generator": "~1.7.0",
+    "glob": "^7.0.3",
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-dojo2": "2.0.0-beta.16",
+    "grunt-text-replace": "^0.4.0",
+    "grunt-ts": "^5.5.1",
+    "grunt-tslint": "^3.1.0",
+    "grunt-typings": ">=0.1.5",
+    "intern": "^3.2.3",
+    "istanbul": "^0.4.3",
+    "remap-istanbul": "^0.6.4",
+    "sinon": "^1.17.5",
+    "tslint": "^3.11.0",
+    "typescript": "2.0.2",
+    "yargs": "^5.0.0"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^3.0.1",
+    "html-webpack-plugin": "^2.22.0",
+    "ts-loader": "^0.8.2",
+    "umd-compat-webpack-plugin": "^1.0.1",
+    "webpack": "^1.13.2"
+  }
+}
