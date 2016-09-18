@@ -30,7 +30,6 @@ module.exports = {
 			{ context: 'src', from: '**/*', ignore: '*.ts' },
 		]),
 		new RequirePlugin(),
-		new webpack.BannerPlugin('require = function () {};', { raw: true, entryOnly: true }),
 		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }}),
 		new HtmlWebpackPlugin ({
