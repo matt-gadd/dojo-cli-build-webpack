@@ -11,7 +11,10 @@ module.exports = {
 	target: 'node',
 	resolve: {
 		root: [ basePath ],
-		extensions: ['', '.ts', '.tsx', '.js']
+		extensions: ['', '.ts', '.tsx', '.js'],
+		alias: {
+			rxjs: '@reactivex/rxjs/dist/amd'
+		}
 	},
 	resolveLoader: {
 		root: [ path.join(__dirname, "node_modules") ]
