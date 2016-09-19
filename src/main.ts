@@ -7,19 +7,30 @@ const command: Command = {
 	},
 	run(helper: Helper, args: any) {
 		const webpack: any = require('webpack');
+		const path: any = require('path');
+		const webpackDevServer: any = require('webpack-dev-server');
+
 		const config: any = require('./webpack.config.prod.js');
+		config.devtool = 'eval-source-map';
+		config.entry.unshift(path.join(__dirname, 'node_modules', 'webpack-dev-server/client?'));
 
 		const compiler = webpack(config);
+		const server = new webpackDevServer(compiler, {
+			stats: {
+				colors: true,
+				chunks: false
+			}
+		});
 
-		return new Promise((resolve) => {
-			compiler.run((err: any, stats: any) => {
-				console.log(stats.toString({
-					chunks: false,
-					colors: true
-				}));
-				resolve({});
+		return new Promise((resolve, reject) => {
+			server.listen(9999, '127.0.0.1', (err: Error) => {
+				console.log('Starting server on http://localhost:9999');
+				if (err) {
+					reject(err);
+				}
 			});
 		});
+
 	}
 };
 

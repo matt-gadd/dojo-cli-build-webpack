@@ -6,9 +6,8 @@ const path = require('path');
 const basePath = process.cwd();
 
 module.exports = {
-	entry: path.join(basePath, 'src/main.ts'),
+	entry: [ path.join(basePath, 'src/main.ts') ],
 	devtool: 'source-map',
-	target: 'node',
 	resolve: {
 		root: [ basePath ],
 		extensions: ['', '.ts', '.tsx', '.js'],
@@ -41,7 +40,7 @@ module.exports = {
 		})
 	],
 	output: {
-		path: './dist',
+		path: path.resolve('./dist'),
 		filename: 'main.js',
 	}
 };
